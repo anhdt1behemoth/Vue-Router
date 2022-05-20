@@ -21,12 +21,17 @@ export default new Vuex.Store({
     allDatas: state => state.Datas
   },
   mutations: {
-    setDatas: (state, Datas) => (state.Datas = Datas)
+    setDatas: (state, Datas) => (state.Datas = Datas),
+    newDatas: (state, Data) => state.Datas.unshift(Data)
   },
   actions: {
     async fetchDatas ({ commit }) {
       const response = await axios.get('https://jsonplaceholder.typicode.com/todos')
       commit('setDatas', response.data)
+    },
+    async createDatas ({ commit, title }) {
+      const response = await axios.post('https://jsonplaceholder.typicode.com/todos', { title, completed: false })
+      commit('newDatas', response.data)
     }
   },
   modules: {

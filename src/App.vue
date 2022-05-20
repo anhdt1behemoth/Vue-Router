@@ -1,19 +1,19 @@
 <template>
   <div id="app">
-    <button @click="$router.params.push('/createData')">Create</button>
+    <CreateView/>
     <AxiTest/>
    </div>
 </template>
 <script>
 import AxiTest from '../src/views/AxiTest.vue'
+import CreateView from './views/CreateView.vue'
 export default {
   name: 'App',
   components: {
-    AxiTest
+    AxiTest,
+    CreateView
   }
 }
 </script>
 <style>
- .btn{
- }
 </style>
