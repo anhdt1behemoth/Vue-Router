@@ -1,12 +1,11 @@
 <template>
   <div id="app">
+    <button @click="$router.params.push('/createData')">Create</button>
     <AxiTest/>
-  </div>
+   </div>
 </template>
-
 <script>
-import AxiTest from './components/AxiTest.vue'
-
+import AxiTest from '../src/views/AxiTest.vue'
 export default {
   name: 'App',
   components: {
@@ -14,14 +13,7 @@ export default {
   }
 }
 </script>
-
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+ .btn{
+ }
 </style>

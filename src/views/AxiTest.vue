@@ -1,17 +1,18 @@
 <template>
   <div class="Datas">
-      <div v-for="Data in allDatas" :key="Data.id" class="Data">{{Data.title}}</div>
+      <div v-for="Data in Datas" :key="Data.id" class="Data">{{Data.id}}<br/>{{Data.title}}
+       <br/> {{Data.completed}}</div>
   </div>
 </template>
 
 <script>
-import { mapGetters, mapActions } from 'vuex'
+import { mapState, mapActions } from 'vuex'
 export default {
   name: 'AxiTest',
   methods: {
     ...mapActions(['fetchDatas'])
   },
-  computed: mapGetters(['allDatas']),
+  computed: mapState(['Datas']),
   created () {
     this.fetchDatas()
   }
